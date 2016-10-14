@@ -1,9 +1,42 @@
-var docsDir = 'docs/'
+var langListConfig = {
+  "en": "English",
+  "es": "español",
+  "ar":"العربية",
+  "bg":"Български",
+  "cs":"čeština",
+  "da":"dansk",
+  "de":"Deutsch",
+  "el":"Ελληνικά",
+  "en-us":"English (United States)",
+  "es-latn":"Español (Latino)",
+  "fr":"Français",
+  "fr-ca":"Français (Canada)",
+  "hr":"Hrvatski",
+  "hu":"magyar",
+  "it":"Italiano",
+  "mk":"Mакедонски",
+  "nl":"Nederlands",
+  "no":"Norsk (bokmål)",
+  "po":"polski",
+  "pt":"Português",
+  "pt-br":"Português (Brasil)",
+  "ro":"română",
+  "ru":"Русский",
+  "sk":"slovenčina",
+  "sl":"slovenski",
+  "sv":"svenska",
+  "zh-cn":"中文(简体)",
+  "zh-hk":"中文(繁体)",
+  "tr":"Türkçe"
+};
+
+var docsDir = 'docs/';
+var layoutDir = 'layout/';
 var loadPageErrorNum = 0;
+var currentPage = '';
 
 
-function initMarkDownHtml(pageName, langId) {
-  $mdview = $('[mdview]');
+function initMarkDownHtml($mdview, pageName, langId) {
   $mdview.find('img').each(function() {
     $this = $(this);
     var src = $this.attr('src');
@@ -12,7 +45,7 @@ function initMarkDownHtml(pageName, langId) {
       .addClass('img-responsive')
       .attr('onerror', "this.src='" + enImg + "';this.onerror='return true'");
   });
-  $('html').attr('id','html-'+langId)
+  $('html').attr('id', 'html-' + langId);
   document.title = $('h1:first').text() || "";
   $mdview.find('table').addClass('table table-bordered');
   $mdview.find('p').each(function() {
@@ -34,20 +67,36 @@ function loadPage() {
   var pathArr = args.slice(0, argsLength - 1);
   var pagePath = pathArr.join('/');
   var langId = arguments[argsLength - 1];
-  $mdview = $('[mdview]');
+  var $mdview = $('[mdview]');
+  var $docView = $mdview;
+  currentPage = pagePath;
+  $("#lang-select").val(langId);
+  $pageContainer = $("#pageContainer")
+
   $.ajax({
-    url: docsDir+pagePath + '/' + langId + '/' + langId + '.html'
-  }).done(function(data) {
-    loadPageErrorNum = 0;
-    $mdview.addClass('mdview').html(data);
-    initMarkDownHtml(pagePath, langId);
-  }).fail(function() {
-    if (loadPageErrorNum === 0) {
-      window.location.hash = '/' +pagePath+'/en';
-    } else {
-      $mdview.html('notfound');
+    url: layoutDir + pagePath + '/index.html'
+  }).always(function(data) {
+    $docView.html(data);
+    var $childView = $mdview.find('[mdview]');
+    if ($childView.size() > 0) {
+      $docView = $childView;
     }
-    loadPageErrorNum++;
+    $.ajax({
+      url: docsDir + pagePath + '/' + langId + '/' + langId + '.html'
+    }).done(function(data) {
+      loadPageErrorNum = 0;
+      $pageContainer.removeClass("loading");
+      $docView.addClass('mdview').html(data);
+      initMarkDownHtml($docView, pagePath, langId);
+    }).fail(function() {
+      if (loadPageErrorNum === 0) {
+        window.location.hash = '/' + pagePath + '/en';
+      } else {
+        $pageContainer.removeClass("loading");
+        $docView.html('notfound');
+      }
+      loadPageErrorNum++;
+    });
   });
 }
 
@@ -65,6 +114,7 @@ function initRouter() {
   var options = {
     notfound: function() {
       $('[mdview]').html('notfound');
+      $("#pageContainer").removeClass("loading")
     }
   };
   var router = Router(routes).configure(options);
@@ -72,6 +122,17 @@ function initRouter() {
 }
 
 
+function pageInit() {
+  var langSelectStr = '';
+  $.each(langListConfig, function(i, v) {
+    langSelectStr += '<option value="' + i + '">' + v + '</option>';
+  });
+  $("#lang-select").html(langSelectStr).change(function(){
+    window.location.hash = '/' + currentPage +'/'+ $(this).val();
+  });
+}
+
 $(function() {
+  pageInit();
   initRouter();
 });

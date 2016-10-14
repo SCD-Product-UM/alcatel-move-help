@@ -39,21 +39,16 @@ body {
   line-height: 55px
 }
 
+#pageContainer.loading{
+  background: url('../images/loader.gif') center center no-repeat;
+  min-height: 200px;
+}
+#lang-select{
+  margin-top: 18px;
+  width: 100px;
+}
 a:hover {
   text-decoration: none
-}
-
-.nav-links {
-  height: 55px;
-  line-height: 55px;
-  text-align: right;
-  display: inline-block
-}
-
-.nav-links ul li {
-  float: right;
-  padding: 10px;
-  list-style-type: none
 }
 
 h1,
@@ -66,16 +61,28 @@ h5 {
   line-height: 1.1;
 }
 
-h1{
+h1 {
   text-align: center;
-  margin:20px auto 40px;
+  margin: 20px auto 40px;
 }
-html body{
-  direction:ltr;
+
+html body {
+  direction: ltr;
 }
-#html-ar body{
-  direction:rtl;
+
+blockquote {
+  background: #efeeee
 }
-blockquote{
-  background: #eeeeee
+
+@media (max-width:768px) {
+  .header .container {
+    padding: 30px 10px;
+  }
+  .container {
+    padding: 10px;
+  }
+}
+
+#html-ar body {
+  direction: rtl;
 }
