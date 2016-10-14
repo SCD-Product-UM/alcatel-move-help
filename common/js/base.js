@@ -1,42 +1,48 @@
 var langListConfig = {
   "en": "English",
   "es": "español",
-  "ar":"العربية",
-  "bg":"Български",
-  "cs":"čeština",
-  "da":"dansk",
-  "de":"Deutsch",
-  "el":"Ελληνικά",
-  "en-us":"English (United States)",
-  "es-latn":"Español (Latino)",
-  "fr":"Français",
-  "fr-ca":"Français (Canada)",
-  "hr":"Hrvatski",
-  "hu":"magyar",
-  "it":"Italiano",
-  "mk":"Mакедонски",
-  "nl":"Nederlands",
-  "no":"Norsk (bokmål)",
-  "po":"polski",
-  "pt":"Português",
-  "pt-br":"Português (Brasil)",
-  "ro":"română",
-  "ru":"Русский",
-  "sk":"slovenčina",
-  "sl":"slovenski",
-  "sv":"svenska",
-  "zh-cn":"中文(简体)",
-  "zh-hk":"中文(繁体)",
-  "tr":"Türkçe"
+  "ar": "العربية",
+  "bg": "Български",
+  "cs": "čeština",
+  "da": "dansk",
+  "de": "Deutsch",
+  "el": "Ελληνικά",
+  "en-us": "English (United States)",
+  "es-latn": "Español (Latino)",
+  "fr": "Français",
+  "fr-ca": "Français (Canada)",
+  "hr": "Hrvatski",
+  "hu": "magyar",
+  "it": "Italiano",
+  "mk": "Mакедонски",
+  "nl": "Nederlands",
+  "no": "Norsk (bokmål)",
+  "po": "polski",
+  "pt": "Português",
+  "pt-br": "Português (Brasil)",
+  "ro": "română",
+  "ru": "Русский",
+  "sk": "slovenčina",
+  "sl": "slovenski",
+  "sv": "svenska",
+  "zh-cn": "中文(简体)",
+  "zh-hk": "中文(繁体)",
+  "tr": "Türkçe"
 };
 
 var docsDir = 'docs/';
 var layoutDir = 'layout/';
 var loadPageErrorNum = 0;
 var currentPage = '';
+var currentLang = 'en';
 
 
 function initMarkDownHtml($mdview, pageName, langId) {
+  $('[linkHref]').each(function(){
+    $(this).attr('href','#'+$(this).attr('linkHref')+'/'+currentLang);
+  });
+
+  $('#umlinkHref').attr('href','docs/wifi_watch/um_pdf/wifi_watch_um_'+currentLang+'.pdf');
   $mdview.find('img').each(function() {
     $this = $(this);
     var src = $this.attr('src');
@@ -67,11 +73,12 @@ function loadPage() {
   var pathArr = args.slice(0, argsLength - 1);
   var pagePath = pathArr.join('/');
   var langId = arguments[argsLength - 1];
+  currentLang = langId;
   var $mdview = $('[mdview]');
   var $docView = $mdview;
   currentPage = pagePath;
   $("#lang-select").val(langId);
-  $pageContainer = $("#pageContainer")
+  $pageContainer = $("#pageContainer");
 
   $.ajax({
     url: layoutDir + pagePath + '/index.html'
@@ -81,6 +88,11 @@ function loadPage() {
     if ($childView.size() > 0) {
       $docView = $childView;
     }
+    loadDoc(langId);
+
+  });
+
+  function loadDoc(langId) {
     $.ajax({
       url: docsDir + pagePath + '/' + langId + '/' + langId + '.html'
     }).done(function(data) {
@@ -90,14 +102,15 @@ function loadPage() {
       initMarkDownHtml($docView, pagePath, langId);
     }).fail(function() {
       if (loadPageErrorNum === 0) {
-        window.location.hash = '/' + pagePath + '/en';
+        loadDoc('en');
+        //window.location.hash = '/' + pagePath + '/en';
       } else {
         $pageContainer.removeClass("loading");
-        $docView.html('notfound');
+        $docView.html('404 Not Found');
       }
       loadPageErrorNum++;
     });
-  });
+  }
 }
 
 function initRouter() {
@@ -113,8 +126,8 @@ function initRouter() {
 
   var options = {
     notfound: function() {
-      $('[mdview]').html('notfound');
-      $("#pageContainer").removeClass("loading")
+      $('[mdview]').html('404 Not Found');
+      $("#pageContainer").removeClass("loading");
     }
   };
   var router = Router(routes).configure(options);
@@ -127,9 +140,11 @@ function pageInit() {
   $.each(langListConfig, function(i, v) {
     langSelectStr += '<option value="' + i + '">' + v + '</option>';
   });
-  $("#lang-select").html(langSelectStr).change(function(){
-    window.location.hash = '/' + currentPage +'/'+ $(this).val();
+  $("#lang-select").html(langSelectStr).change(function() {
+    window.location.hash = '/' + currentPage + '/' + $(this).val();
   });
+
+  
 }
 
 $(function() {
