@@ -1,6 +1,5 @@
 var langListConfig = {
   "en": "English",
-  "es": "español",
   "ar": "العربية",
   "bg": "Български",
   "cs": "čeština",
@@ -8,26 +7,29 @@ var langListConfig = {
   "de": "Deutsch",
   "el": "Ελληνικά",
   "en-us": "English (United States)",
-  "es-latn": "Español (Latino)",
+  "es": "español",
+  "es-419": "Español (Latino)",
   "fr": "Français",
-  "fr-ca": "Français (Canada)",
   "hr": "Hrvatski",
   "hu": "magyar",
   "it": "Italiano",
   "mk": "Mакедонски",
   "nl": "Nederlands",
-  "no": "Norsk (bokmål)",
+  "nn-NO": "Norsk (bokmål)",
   "po": "polski",
   "pt": "Português",
-  "pt-br": "Português (Brasil)",
+  "pt_BR": "Português (Brasil)",
+  "lv": "Latvian",
+  "lt": "Lithuanian",
+  "pl": "Polish",
   "ro": "română",
   "ru": "Русский",
   "sk": "slovenčina",
   "sl": "slovenski",
   "sv": "svenska",
-  "zh-cn": "中文(简体)",
-  "zh-hk": "中文(繁体)",
-  "tr": "Türkçe"
+  "tr": "Türkçe",
+  "fi":'Finnish',
+  "et": "Estonian"
 };
 
 var docsDir = 'docs/';
