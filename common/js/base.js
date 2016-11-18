@@ -104,8 +104,8 @@ function loadPage() {
       initMarkDownHtml($docView, pagePath, langId);
     }).fail(function() {
       if (loadPageErrorNum === 0) {
-        loadDoc('en');
-        //window.location.hash = '/' + pagePath + '/en';
+        //loadDoc('en');
+        window.location.hash = '/' + pagePath + '/en';
       } else {
         $pageContainer.removeClass("loading");
         $docView.html('404 Not Found');
