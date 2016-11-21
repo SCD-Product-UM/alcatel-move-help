@@ -29,7 +29,8 @@ var langListConfig = {
   "sv": "svenska",
   "tr": "Türkçe",
   "fi":'Finnish',
-  "et": "Estonian"
+  "et": "Estonian",
+  "zh_CN": "简体中文"
 };
 
 var docsDir = 'docs/';
@@ -146,7 +147,7 @@ function pageInit() {
     window.location.hash = '/' + currentPage + '/' + $(this).val();
   });
 
-  
+
 }
 
 $(function() {
