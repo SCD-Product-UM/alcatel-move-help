@@ -27,7 +27,7 @@ var langListConfig = {
   "sk": "slovenčina",
   "sl": "slovenski",
   "sv": "svenska",
-  "tr": "Türkçe",
+  //"tr": "Türkçe",
   "fi":'Finnish',
   "et": "Estonian",
   "zh_CN": "简体中文"
