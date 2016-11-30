@@ -6,7 +6,7 @@ var langListConfig = {
   "da": "dansk",
   "de": "Deutsch",
   "el": "Ελληνικά",
-  "en-us": "English (United States)",
+  "en_US": "English (United States)",
   "es": "español",
   "es-419": "Español (Latino)",
   "fr": "Français",
@@ -16,7 +16,6 @@ var langListConfig = {
   "mk": "Mакедонски",
   "nl": "Nederlands",
   "nn-NO": "Norsk (bokmål)",
-  "po": "polski",
   "pt": "Português",
   "pt_BR": "Português (Brasil)",
   "lv": "Latvian",
@@ -41,11 +40,11 @@ var currentLang = 'en';
 
 
 function initMarkDownHtml($mdview, pageName, langId) {
-  $('[linkHref]').each(function(){
-    $(this).attr('href','#'+$(this).attr('linkHref')+'/'+currentLang);
+  $('[linkHref]').each(function() {
+    $(this).attr('href', '#' + $(this).attr('linkHref') + '/' + currentLang);
   });
 
-  $('#umlinkHref').attr('href','docs/wifi_watch/um_pdf/wifi_watch_um_'+currentLang+'.pdf');
+  $('#umlinkHref').attr('href', 'docs/wifi_watch/um_pdf/wifi_watch_um_' + currentLang + '.pdf');
   $mdview.find('img').each(function() {
     $this = $(this);
     var src = $this.attr('src');
@@ -87,6 +86,7 @@ function loadPage() {
     url: layoutDir + pagePath + '/index.html'
   }).always(function(data) {
     $docView.html(data);
+    $("#tpl").replaceTpl();
     var $childView = $mdview.find('[mdview]');
     if ($childView.size() > 0) {
       $docView = $childView;
@@ -103,6 +103,7 @@ function loadPage() {
       $pageContainer.removeClass("loading");
       $docView.addClass('mdview').html(data);
       initMarkDownHtml($docView, pagePath, langId);
+      $("#tpl").replaceTpl();
     }).fail(function() {
       if (loadPageErrorNum === 0) {
         //loadDoc('en');
@@ -149,6 +150,42 @@ function pageInit() {
 
 
 }
+
+
+(function() {
+  var cache = {};
+  this.tmpl = function(template_id, data) {
+    var fn = cache[template_id];
+    this.get = function(dataid) {
+      var id = dataid.split(":")[0];
+      var res = data[id] ? (dataid.charAt(dataid.length - 1) == ":" ? data[id] + ':' : data[id]) : 'null';
+      return res;
+    }
+
+    if (!fn) {
+      var template = document.getElementById(template_id).innerHTML;
+      fn = new Function("data", "var p=[]; p.push('" +
+        template
+        .replace(/[\r\t\n]/g, " ")
+        .split("'").join("\\'")
+        .replace(/\${(.+?)}/g, "',this.get(\'$1\'),'")
+        .split("${").join("');")
+        .split("}").join("p.push('") + "');return p.join('');");
+      cache[template_id] = fn;
+    }
+    return fn();
+  };
+})();
+
+(function($) {
+  $.fn.extend({
+    replaceTpl: function() {
+      return this.each(function() {
+        $(this).replaceWith(tmpl($(this).attr("id"), RES[currentLang]));
+      })
+    }
+  });
+})(jQuery);
 
 $(function() {
   pageInit();
