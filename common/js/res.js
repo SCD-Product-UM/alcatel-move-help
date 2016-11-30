@@ -158,5 +158,10 @@ var RES = {
     "ids_faq": "الأسئلة الأكثر شيوعا",
     "ids_down_user_manual": "تنزيل دليل المستخدم",
     "ids_support_phone": "الهواتف المدعومة"
+  },
+  "zh_CN": {
+    "ids_faq": " 常见问题",
+    "ids_down_user_manual": "用户手册下载",
+    "ids_support_phone": "支持的手机"
   }
 }
