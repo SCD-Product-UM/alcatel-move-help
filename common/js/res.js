@@ -134,6 +134,11 @@ var RES = {
     "ids_down_user_manual": "Transferir o manual do utilizador",
     "ids_support_phone": "Telefone suportados"
   },
+  "pt_BR": {
+    "ids_faq": "Perguntas frequentes (FAQ)",
+    "ids_down_user_manual": "Transferir o manual do utilizador",
+    "ids_support_phone": "Telefone suportados"
+  },
   "de": {
     "ids_faq": "FAQs",
     "ids_down_user_manual": "Bedienungsanleitung herunterladen",
