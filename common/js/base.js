@@ -6,7 +6,7 @@ var langListConfig = {
   "da": "dansk",
   "de": "Deutsch",
   "el": "Ελληνικά",
-  "en_US": "English (United States)",
+  //"en_US": "English (United States)",
   "es": "español",
   "es-419": "Español (Latino)",
   "fr": "Français",
