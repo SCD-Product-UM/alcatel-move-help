@@ -74,11 +74,15 @@ function loadPage() {
   }
   var pathArr = args.slice(0, argsLength - 1);
   var pagePath = pathArr.join('/');
+  currentPage = pagePath;
   var langId = arguments[argsLength - 1];
+  if(!langListConfig.hasOwnProperty(langId)){
+    window.location.hash = '/' + currentPage + '/en';
+  }
   currentLang = langId;
   var $mdview = $('[mdview]');
   var $docView = $mdview;
-  currentPage = pagePath;
+  
   $("#lang-select").val(langId);
   $pageContainer = $("#pageContainer");
 
