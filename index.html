@@ -5,11 +5,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.js"></script>
-  <script src="//cdn.bootcss.com/Director/1.2.2/director.min.js"></script>
-  <script src="common/js/res.js"></script>
-  <script src="common/js/base.js"></script>
+  <script src="http://cdn.bootcss.com/Director/1.2.2/director.min.js"></script>
+  <script>
+    document.write(unescape('%3Cscript src="common/js/res.js?'+Math.random()+'"%3E%3C/script%3E'));
+    document.write(unescape('%3Cscript src="common/js/base.js?'+Math.random()+'"%3E%3C/script%3E'));
+    document.write(unescape('%3Clink rel="stylesheet" href="common/css/style.css?'+Math.random()+'"%3E%3C/%3E'));
+  </script>
   <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="common/css/style.css" />
 </head>
 
 <body>

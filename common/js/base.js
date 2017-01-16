@@ -101,7 +101,7 @@ function loadPage() {
 
   function loadDoc(langId) {
     $.ajax({
-      url: docsDir + pagePath + '/' + langId + '/' + langId + '.html'
+      url: docsDir + pagePath + '/' + langId + '/' + langId + '.html?'+Math.random()
     }).done(function(data) {
       loadPageErrorNum = 0;
       $pageContainer.removeClass("loading");
