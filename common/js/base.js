@@ -45,6 +45,7 @@ function initMarkDownHtml($mdview, pageName, langId) {
   });
 
   $('#umlinkHref').attr('href', 'docs/wifi_watch/um_pdf/wifi_watch_um_' + currentLang + '.pdf');
+  $('#mb12-um-link').attr('href', 'docs/mb12/um_pdf/mb12_um_' + currentLang + '.pdf');
   $mdview.find('img').each(function() {
     $this = $(this);
     var src = $this.attr('src');
