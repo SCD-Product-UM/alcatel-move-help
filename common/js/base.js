@@ -65,6 +65,18 @@ function initMarkDownHtml($mdview, pageName, langId) {
       $this.addClass('ds-block');
     }
   });
+  $(".js-faqs h4").each(function(v){
+    $(this).prepend(v+1+". ")
+    //console.log($(this).text())
+  })
+  $(".js-faqs h4").on("click",function(){
+    var thisBlock=$(this).next("blockquote")
+    if (thisBlock.hasClass("show")){
+      thisBlock.removeClass("show")
+    }else{
+      thisBlock.addClass("show")
+    }
+  })
 }
 
 function loadPage() {
