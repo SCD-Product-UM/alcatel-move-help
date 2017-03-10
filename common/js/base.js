@@ -95,7 +95,12 @@ function loadPage() {
   currentLang = langId;
   var $mdview = $('[mdview]');
   var $docView = $mdview;
-  
+  var location_href = location.href;
+  if(location_href.indexOf("kids_watch")!=-1){
+    $("#lang-select").hide()
+  }else{
+    $("#lang-select").show()
+  }
   $("#lang-select").val(langId);
   $pageContainer = $("#pageContainer");
 
