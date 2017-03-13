@@ -90,6 +90,13 @@ function loadPage() {
   currentPage = pagePath;
   var langId = arguments[argsLength - 1];
   if(!langListConfig.hasOwnProperty(langId)){
+    if(langId.indexOf("_")!=-1){
+      langId = langId.split("_")[0]
+    }else if(langId.indexOf("-")!=-1){
+      langId = langId.split("-")[0]
+    }
+  }
+  if(!langListConfig.hasOwnProperty(langId)){
     window.location.hash = '/' + currentPage + '/en';
   }
   currentLang = langId;
