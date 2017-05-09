@@ -9,18 +9,17 @@
 </head>
 <body>
   <script type="text/javascript">
-  var pathname = window.location.pathname;
+  var pathname = window.location.hash;
   //var pathname = 'http://www.tcl-move.com/help/url.html#/mb12/faqs/hh/en'
   //取路由值
-  var langStr = pathname.split('/').reverse()[0];
-  var langId = langStr.split('.')[0];
-  var customeNameStr = pathname.split('/').reverse()[1]
-  var customeName = customeNameStr.split('.')[0];
-  var pageNameStr = pathname.split('/').reverse()[2]
-  var pageName = pageNameStr.split('.')[0];
-  var projectNameStr = pathname.split('/').reverse()[3];
-  var projectName = projectNameStr.split('.')[0];
-  //   http://www.tcl-move.com/help/#/mb12/terms_and_conditions/moveband2/en
+  var rulparams = pathname.split('/');
+  var langId = rulparams[4];
+  var customeName = rulparams[3]
+  var pageName = rulparams[2]
+  var projectName = rulparams[1]
+  // http://www.tcl-move.com/help/#/mb12/terms_and_conditions/moveband2/en
+  // var testUrl = "http://127.0.0.1:9096"
+  
   if (projectName == "mb12" && customeName == "moveband2" && pageName == "terms_and_conditions") {
     window.location.href = "http://www.tcl-move.com/help/#/mb12_terms_and_conditions/" + langId
   }
