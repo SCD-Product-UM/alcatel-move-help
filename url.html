@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.js"></script>
+  <script src="http://cdn.bootcss.com/Director/1.2.2/director.min.js"></script>
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+</head>
+<body>
+  <script type="text/javascript">
+  var pathname = window.location.pathname;
+  //var pathname = 'http://www.tcl-move.com/help/url.html#/mb12/faqs/hh/en'
+  //取路由值
+  var langStr = pathname.split('/').reverse()[0];
+  var langId = langStr.split('.')[0];
+  var customeNameStr = pathname.split('/').reverse()[1]
+  var customeName = customeNameStr.split('.')[0];
+  var pageNameStr = pathname.split('/').reverse()[2]
+  var pageName = pageNameStr.split('.')[0];
+  var projectNameStr = pathname.split('/').reverse()[3];
+  var projectName = projectNameStr.split('.')[0];
+  //   http://www.tcl-move.com/help/#/mb12/terms_and_conditions/moveband2/en
+  if (projectName == "mb12" && customeName == "moveband2" && pageName == "terms_and_conditions") {
+    window.location.href = "http://www.tcl-move.com/help/#/mb12_terms_and_conditions/" + langId
+  }
+  if (projectName == "mb12" && customeName == "moveband2" && pageName == "faqs") {
+    window.location.href = "http://www.tcl-move.com/help/#/mb12/fqas/" + langId
+  }
+  if (projectName == "mb12" && customeName == "moveband2" && pageName == "privacy_policy") {
+    window.location.href = "http://www.tcl-move.com/help/#/mb12/mb12_privacy_policy/" + langId
+  }
+  </script>
+</body>
+
+</html>
