@@ -37,6 +37,7 @@ var layoutDir = 'layout/';
 var loadPageErrorNum = 0;
 var currentPage = '';
 var currentLang = 'en';
+var currentLang-moveband2 = 'en_Alcatel'
 
 
 function initMarkDownHtml($mdview, pageName, langId) {
@@ -46,6 +47,7 @@ function initMarkDownHtml($mdview, pageName, langId) {
   var currentProject = window.location.hash.split('/')[1]
   $('#umlinkHref').attr('href', 'docs/'+currentProject+'/um_pdf/wifi_watch_um_' + currentLang + '.pdf');
   $('#mb12-um-link').attr('href', 'docs/mb12/um_pdf/mb12_um_' + currentLang + '.pdf');
+  $('#mb12-um-link-moveband2').attr('href', 'docs/mb12/um_pdf/mb12_um_' + currentLang-moveband2 + '.pdf');
   $('#mt30-um-link').attr('href', 'docs/mt30/um_pdf/mt30_um_' + currentLang + '.pdf');
   $mdview.find('img').each(function() {
     $this = $(this);
