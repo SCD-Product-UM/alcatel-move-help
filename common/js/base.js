@@ -132,6 +132,7 @@ function loadPage() {
   });
 
   function loadDoc(langId) {
+    $(".help-nav").hide(0)
     $.ajax({
       url: docsDir + pagePath + '/' + langId + '/' + langId + '.html?'+Math.random()
     }).done(function(data) {
@@ -140,6 +141,7 @@ function loadPage() {
       $docView.addClass('mdview').html(data);
       initMarkDownHtml($docView, pagePath, langId);
       $("#tpl").replaceTpl();
+      $(".help-nav").show(0)
     }).fail(function() {
       if (loadPageErrorNum === 0) {
         //loadDoc('en');
