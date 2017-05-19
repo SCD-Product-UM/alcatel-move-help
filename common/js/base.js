@@ -41,9 +41,7 @@ var currentLang = 'en';
 
 
 function initMarkDownHtml($mdview, pageName, langId) {
-  $(".help-nav").hide(0)
   $('[linkHref]').each(function() {
-    console.log($(this).attr('linkHref') + '/' + currentLang)
     $(this).attr('href', '#' + $(this).attr('linkHref') + '/' + currentLang);
   });
   
@@ -60,7 +58,6 @@ function initMarkDownHtml($mdview, pageName, langId) {
       .addClass('img-responsive')
       .attr('onerror', "this.src='" + enImg + "';this.onerror='return true'");
   });
-  $(".help-nav").show(0);
   $('html').attr('id', 'html-' + langId);
   document.title = $('h1:first').text() || "";
   $mdview.find('table').addClass('table table-bordered');
@@ -133,6 +130,7 @@ function loadPage() {
 
   function loadDoc(langId) {
     $pageContainer.addClass("loading");
+    $(".help-nav").hide(0)
     $.ajax({
       url: docsDir + pagePath + '/' + langId + '/' + langId + '.html?'+Math.random()
     }).done(function(data) {
