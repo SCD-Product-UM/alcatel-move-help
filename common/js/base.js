@@ -41,9 +41,11 @@ var currentLang = 'en';
 
 
 function initMarkDownHtml($mdview, pageName, langId) {
+  $(".help-nav").hide(0)
   $('[linkHref]').each(function() {
     $(this).attr('href', '#' + $(this).attr('linkHref') + '/' + currentLang);
   });
+  
   var currentProject = window.location.hash.split('/')[1]
   $('#umlinkHref').attr('href', 'docs/'+currentProject+'/um_pdf/wifi_watch_um_' + currentLang + '.pdf');
   $('#mb12-um-link').attr('href', 'docs/mb12/um_pdf/mb12_um_' + currentLang + '.pdf');
@@ -57,6 +59,7 @@ function initMarkDownHtml($mdview, pageName, langId) {
       .addClass('img-responsive')
       .attr('onerror', "this.src='" + enImg + "';this.onerror='return true'");
   });
+  $(".help-nav").show(0);
   $('html').attr('id', 'html-' + langId);
   document.title = $('h1:first').text() || "";
   $mdview.find('table').addClass('table table-bordered');
