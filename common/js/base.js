@@ -43,6 +43,7 @@ var currentLang = 'en';
 function initMarkDownHtml($mdview, pageName, langId) {
   $(".help-nav").hide(0)
   $('[linkHref]').each(function() {
+    console.log($(this).attr('linkHref') + '/' + currentLang)
     $(this).attr('href', '#' + $(this).attr('linkHref') + '/' + currentLang);
   });
   
