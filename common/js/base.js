@@ -132,8 +132,7 @@ function loadPage() {
   });
 
   function loadDoc(langId) {
-    $('[mdview]').html('Loading...');
-    $(".help-nav").hide(0)
+    $pageContainer.addClass("loading");
     $.ajax({
       url: docsDir + pagePath + '/' + langId + '/' + langId + '.html?'+Math.random()
     }).done(function(data) {
