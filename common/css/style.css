@@ -85,8 +85,16 @@ a:hover {
   border-top: 1px solid #eee;
   color: #999;
   line-height: 2;
+  
 }
-
+.help-main blockquote{
+  font-size: 14px;
+  color: #999;
+  line-height: 2;
+}
+.help-main h4{
+  font-size: 16px;
+}
 h1,
 h2,
 h3,
