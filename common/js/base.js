@@ -139,6 +139,8 @@ function loadPage() {
       initMarkDownHtml($docView, pagePath, langId);
       $("#tpl").replaceTpl();
       $(".help-nav").show(0)
+      $(".help-nav .list-group-item").removeClass("current")
+      $(".help-nav .list-group-item[href='"+window.location.hash+"']").addClass("current")
     }).fail(function() {
       if (loadPageErrorNum === 0) {
         //loadDoc('en');
@@ -148,8 +150,11 @@ function loadPage() {
         $docView.html('404 Not Found');
       }
       loadPageErrorNum++;
+      $(".help-nav .list-group-item").removeClass("current")
+      $(".help-nav .list-group-item[href='"+window.location.hash+"']").addClass("current")
     });
   }
+  
 }
 
 function initRouter() {

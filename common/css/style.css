@@ -141,3 +141,9 @@ blockquote {
 #html-ar body {
   direction: rtl;
 }
+
+a.list-group-item.current {
+    color: #555;
+    text-decoration: none;
+    background-color: #f5f5f5;
+}
