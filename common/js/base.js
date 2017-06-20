@@ -51,7 +51,7 @@ function initMarkDownHtml($mdview, pageName, langId) {
   $('#mt30-um-link').attr('href', 'docs/mt30/um_pdf/mt30_um_' + currentLang + '.pdf');
   $mdview.find('img').each(function() {
     $this = $(this);
-    var src = $this.attr('src');
+    var src = $this.attr('src')+"?"+Math.random();
     var enImg = docsDir + pageName + '/en/' + src;
     $this.attr('src', docsDir + pageName + '/' + langId + '/' + src)
       .addClass('img-responsive')
