@@ -37,7 +37,7 @@ var layoutDir = 'layout/';
 var loadPageErrorNum = 0;
 var currentPage = '';
 var currentLang = 'en';
-//var currentLang-moveband2 = 'en_Alcatel'
+//var currentLang-moveband2 = 'en_Alcatel';
 
 
 function initMarkDownHtml($mdview, pageName, langId) {
