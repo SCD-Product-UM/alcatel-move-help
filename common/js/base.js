@@ -48,8 +48,19 @@ function initMarkDownHtml($mdview, pageName, langId) {
   $('#umlinkHref').attr('href', 'docs/'+currentProject+'/um_pdf/wifi_watch_um_' + currentLang + '.pdf');
   $('#mb12-um-link').attr('href', 'docs/mb12/um_pdf/mb12_um_' + currentLang + '.pdf');
   //$('#mb12-um-link-moveband2').attr('href', 'docs/mb12/um_pdf/mb12_um_' + 'en_Alcatel' + '.pdf');
-  $('#mb12-um-link-moveband2').attr('href', 'docs/mb12/um_pdf/mb12_um_' + currentLang + '.pdf');
+  //$('#mb12-um-link-moveband2').attr('href', 'docs/mb12/um_pdf/mb12_um_' + currentLang + '.pdf');
   $('#mt30-um-link').attr('href', 'docs/mt30/um_pdf/mt30_um_' + currentLang + '.pdf');
+
+  $.ajax({
+    url: 'docs/mb12/um_pdf/mb12_um_' + currentLang + '.pdf?'+ Math.random()
+  }).done(function(data) {
+    $pageContainer.removeClass("loading");
+    $('#mb12-um-link-moveband2').attr('href', 'docs/mb12/um_pdf/mb12_um_' + currentLang + '.pdf');
+  }).fail(function() {
+    $('#mb12-um-link').attr('href', 'docs/mb12/um_pdf/mb12_um_' + 'en' + '.pdf');
+    $pageContainer.removeClass("loading");
+  });
+
   $mdview.find('img').each(function() {
     $this = $(this);
     var src = $this.attr('src')+"?"+Math.random();
