@@ -49,7 +49,16 @@
     }
 
     if (projectName == "mt30" && customeName == "generic" && pageName == "um") {
-      window.location.href = "http://www.tcl-move.com/help/docs/mt30/um_pdf/mt30_um_" + langId + ".pdf?date="+getNowFormatDate()
+      var currentUmList = ["en"];
+      var currentLangId = "en";
+      if ($.inArray(currentUmList,langId)!=-1) {
+            currentLangId = langId
+        } else if ($.inArray(currentUmList,langId.split("-")[0])!=-1) {
+            currentLangId = langId.split("-")[0]
+        } else if ($.inArray(currentUmList,langId.split("_")[0])!=-1) {
+            currentLangId = langId.split("_")[0]
+        }
+      window.location.href = "http://www.tcl-move.com/help/docs/mt30/um_pdf/mt30_um_" + currentLangId + ".pdf?date="+getNowFormatDate()
     }
     if (projectName == "cpe" && customeName == "generic" && (pageName == "privacy_policy" || pageName ==
         "terms_and_conditions")) {
