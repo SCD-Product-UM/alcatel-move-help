@@ -121,7 +121,7 @@ function loadPage() {
   if(location_href.indexOf("kids_watch")!=-1){
     $("#lang-select").hide()
   }else{
-    $("#lang-select").show()
+    $("#lang-select").hide()
   }
   $("#lang-select").val(langId);
   $pageContainer = $("#pageContainer");
