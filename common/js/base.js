@@ -51,6 +51,7 @@ function initMarkDownHtml($mdview, pageName, langId) {
  // $('#mb12-um-link-moveband2').attr('href', 'docs/mb12/um_pdf/mb12_um_' + currentLang + '.pdf');
 
   $('#mb12-faq-moveband2').attr('href', '#/mb12-moveband2/faqs/' + currentLang); 
+  $('#mb12-support-moveband2').attr('href', '#/mb12-moveband2/supported_phones/' + currentLang); 
   $('#mt30-um-link').attr('href', 'docs/mt30/um_pdf/mt30_um_' + currentLang + '.pdf');
 
   /*$.ajax({
