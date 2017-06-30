@@ -115,8 +115,9 @@ function loadPage() {
     }
   }
   if(!langListConfig.hasOwnProperty(langId)){
-    window.location.hash = '/' + currentPage + '/en';
+    //window.location.hash = '/' + currentPage + '/en';
   }
+  alert(langId)
   currentLang = langId;
   var $mdview = $('[mdview]');
   var $docView = $mdview;
@@ -158,8 +159,8 @@ function loadPage() {
       $(".help-nav .list-group-item[href='"+window.location.hash+"']").addClass("current")
     }).fail(function() {
       if (loadPageErrorNum === 0) {
-        //loadDoc('en');
-        window.location.hash = '/' + pagePath + '/en';
+        loadDoc('en');
+        //window.location.hash = '/' + pagePath + '/en';
       } else {
         $pageContainer.removeClass("loading");
         $docView.html('404 Not Found');
@@ -243,6 +244,6 @@ function pageInit() {
 })(jQuery);
 
 $(function() {
-  pageInit();
+  //pageInit();
   initRouter();
 });
