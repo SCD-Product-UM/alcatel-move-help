@@ -117,7 +117,6 @@ function loadPage() {
   if(!langListConfig.hasOwnProperty(langId)){
     //window.location.hash = '/' + currentPage + '/en';
   }
-  alert(langId)
   currentLang = langId;
   var $mdview = $('[mdview]');
   var $docView = $mdview;
