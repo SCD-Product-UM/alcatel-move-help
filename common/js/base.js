@@ -45,7 +45,12 @@ function initMarkDownHtml($mdview, pageName, langId) {
     $(this).attr('href', '#' + $(this).attr('linkHref') + '/' + currentLang);
   });
   var currentProject = window.location.hash.split('/')[1]
-  $('#umlinkHref').attr('href', 'docs/'+currentProject+'/um_pdf/wifi_watch_um_' + currentLang + '.pdf');
+  if(currentProject=="wifi_watch_kuyou"){
+    $('#umlinkHref').attr('href', 'docs/'+currentProject+'/um_pdf/wifi_watch_kuyou_um_' + currentLang + '.pdf');
+  }else{
+    $('#umlinkHref').attr('href', 'docs/'+currentProject+'/um_pdf/wifi_watch_um_' + currentLang + '.pdf');
+  }
+  
   $('#mb12-um-link').attr('href', 'docs/mb12/um_pdf/mb12_um_' + currentLang + '.pdf');
   $('#mb12-um-link-moveband2').attr('href', 'docs/mb12-moveband2/um_pdf/mb12_um_' + currentLang + '_Alcatel.pdf');
  // $('#mb12-um-link-moveband2').attr('href', 'docs/mb12/um_pdf/mb12_um_' + currentLang + '.pdf');
