@@ -119,8 +119,12 @@ function loadPage() {
       langId = langId.split("-")[0]
     }
   }
+
+  if(langId=="zh"){
+    langId="zh_CN"
+  }
   if(!langListConfig.hasOwnProperty(langId)){
-    //window.location.hash = '/' + currentPage + '/en';
+    window.location.hash = '/' + currentPage + '/en';
   }
   currentLang = langId;
   var $mdview = $('[mdview]');
