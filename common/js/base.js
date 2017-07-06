@@ -120,8 +120,8 @@ function loadPage() {
     }
   }
 
-  if(langId=="zh"){
-    langId="zh_CN"
+   if (langId == 'zh' || langId == 'zh-rCN' || langId == 'zh-Hans_US') {
+    langId = 'zh_CN';
   }
   if(!langListConfig.hasOwnProperty(langId)){
     window.location.hash = '/' + currentPage + '/en';
