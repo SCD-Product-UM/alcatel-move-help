@@ -27,7 +27,7 @@ var langListConfig = {
   "sl": "slovenski",
   "sv": "svenska",
   "tr": "Türkçe",
-  "fi":'Finnish',
+  "fi": 'Finnish',
   "et": "Estonian",
   "zh_CN": "简体中文"
 };
@@ -45,33 +45,26 @@ function initMarkDownHtml($mdview, pageName, langId) {
     $(this).attr('href', '#' + $(this).attr('linkHref') + '/' + currentLang);
   });
   var currentProject = window.location.hash.split('/')[1]
-  if(currentProject=="wifi_watch_kuyou"){
-    $('#umlinkHref').attr('href', 'docs/'+currentProject+'/um_pdf/wifi_watch_kuyou_um_' + currentLang + '.pdf');
-  }else{
-    $('#umlinkHref').attr('href', 'docs/'+currentProject+'/um_pdf/wifi_watch_um_' + currentLang + '.pdf');
+  if (currentProject == "wifi_watch_kuyou") {
+    $('#umlinkHref').attr('href', 'docs/' + currentProject + '/um_pdf/wifi_watch_kuyou_um_' + currentLang + '.pdf');
+  } else {
+    $('#umlinkHref').attr('href', 'docs/' + currentProject + '/um_pdf/wifi_watch_um_' + currentLang + '.pdf');
   }
-  
+
   $('#mb12-um-link').attr('href', 'docs/mb12/um_pdf/mb12_um_' + currentLang + '.pdf');
   $('#mb12-um-link-moveband2').attr('href', 'docs/mb12-moveband2/um_pdf/mb12_um_' + currentLang + '_Alcatel.pdf');
- // $('#mb12-um-link-moveband2').attr('href', 'docs/mb12/um_pdf/mb12_um_' + currentLang + '.pdf');
 
-  $('#mb12-faq-moveband2').attr('href', '#/mb12-moveband2/faqs/' + currentLang); 
-  $('#mb12-support-moveband2').attr('href', '#/mb12-moveband2/supported_phones/' + currentLang); 
+  $('#mb12-faq-moveband2').attr('href', '#/mb12-moveband2/faqs/' + currentLang);
+  $('#mb12-support-moveband2').attr('href', '#/mb12-moveband2/supported_phones/' + currentLang);
   $('#mt30-um-link').attr('href', 'docs/mt30/um_pdf/mt30_um_' + currentLang + '.pdf');
 
-  /*$.ajax({
-    url: 'docs/mb12/um_pdf/mb12_um_' + currentLang + '.pdf?' + Math.random()
-  }).done(function(data) {
-    $pageContainer.removeClass("loading");
-    $('#mb12-um-link-moveband2').attr('href', 'docs/mb12/um_pdf/mb12_um_' + currentLang + '.pdf');
-  }).fail(function() {
-    $('#mb12-um-link').attr('href', 'docs/mb12/um_pdf/mb12_um_' + 'en' + '.pdf');
-    $pageContainer.removeClass("loading");
-  });*/
+  $('#mb12-um-link-kuyou').attr('href', 'docs/mb12-kuyou/um_pdf/mb12_um_' + currentLang + '.pdf');
+  $('#mb12-faq-kuyou').attr('href', '#/mb12-kuyou/faqs/' + currentLang);
+  $('#mb12-support-kuyou').attr('href', '#/mb12-kuyou/supported_phones/' + currentLang);
 
   $mdview.find('img').each(function() {
     $this = $(this);
-    var src = $this.attr('src')+"?"+Math.random();
+    var src = $this.attr('src') + "?" + Math.random();
     var enImg = docsDir + pageName + '/en/' + src;
     $this.attr('src', docsDir + pageName + '/' + langId + '/' + src)
       .addClass('img-responsive')
@@ -88,15 +81,15 @@ function initMarkDownHtml($mdview, pageName, langId) {
       $this.addClass('ds-block');
     }
   });
-  $(".js-faqs h4").each(function(v){
-    $(this).prepend(v+1+". ")
-    //console.log($(this).text())
+  $(".js-faqs h4").each(function(v) {
+    $(this).prepend(v + 1 + ". ")
+      //console.log($(this).text())
   })
-  $(".js-faqs h4").on("click",function(){
-    var thisBlock=$(this).next("blockquote")
-    if (thisBlock.hasClass("show")){
+  $(".js-faqs h4").on("click", function() {
+    var thisBlock = $(this).next("blockquote")
+    if (thisBlock.hasClass("show")) {
       thisBlock.removeClass("show")
-    }else{
+    } else {
       thisBlock.addClass("show")
     }
   })
@@ -112,27 +105,27 @@ function loadPage() {
   var pagePath = pathArr.join('/');
   currentPage = pagePath;
   var langId = arguments[argsLength - 1];
-  if(!langListConfig.hasOwnProperty(langId)){
-    if(langId.indexOf("_")!=-1){
+  if (!langListConfig.hasOwnProperty(langId)) {
+    if (langId.indexOf("_") != -1) {
       langId = langId.split("_")[0]
-    }else if(langId.indexOf("-")!=-1){
+    } else if (langId.indexOf("-") != -1) {
       langId = langId.split("-")[0]
     }
   }
 
-   if (langId == 'zh' || langId == 'zh-rCN' || langId == 'zh-Hans_US') {
+  if (langId == 'zh' || langId == 'zh-rCN' || langId == 'zh-Hans_US') {
     langId = 'zh_CN';
   }
-  if(!langListConfig.hasOwnProperty(langId)){
+  if (!langListConfig.hasOwnProperty(langId)) {
     window.location.hash = '/' + currentPage + '/en';
   }
   currentLang = langId;
   var $mdview = $('[mdview]');
   var $docView = $mdview;
   var location_href = location.href;
-  if(location_href.indexOf("kids_watch")!=-1){
+  if (location_href.indexOf("kids_watch") != -1) {
     $("#lang-select").hide()
-  }else{
+  } else {
     $("#lang-select").hide()
   }
   $("#lang-select").val(langId);
@@ -155,7 +148,7 @@ function loadPage() {
     $pageContainer.addClass("loading");
     $(".help-nav").hide(0)
     $.ajax({
-      url: docsDir + pagePath + '/' + langId + '/' + langId + '.html?'+Math.random()
+      url: docsDir + pagePath + '/' + langId + '/' + langId + '.html?' + Math.random()
     }).done(function(data) {
       loadPageErrorNum = 0;
       $pageContainer.removeClass("loading");
@@ -164,7 +157,7 @@ function loadPage() {
       $("#tpl").replaceTpl();
       $(".help-nav").show(0)
       $(".help-nav .list-group-item").removeClass("current")
-      $(".help-nav .list-group-item[href='"+window.location.hash+"']").addClass("current")
+      $(".help-nav .list-group-item[href='" + window.location.hash + "']").addClass("current")
     }).fail(function() {
       if (loadPageErrorNum === 0) {
         loadDoc('en');
@@ -175,10 +168,10 @@ function loadPage() {
       }
       loadPageErrorNum++;
       $(".help-nav .list-group-item").removeClass("current")
-      $(".help-nav .list-group-item[href='"+window.location.hash+"']").addClass("current")
+      $(".help-nav .list-group-item[href='" + window.location.hash + "']").addClass("current")
     });
   }
-  
+
 }
 
 function initRouter() {
