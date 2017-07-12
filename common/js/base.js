@@ -58,9 +58,9 @@ function initMarkDownHtml($mdview, pageName, langId) {
   $('#mb12-support-moveband2').attr('href', '#/mb12-moveband2/supported_phones/' + currentLang);
   $('#mt30-um-link').attr('href', 'docs/mt30/um_pdf/mt30_um_' + currentLang + '.pdf');
 
-  $('#mb12-um-link-kuyou').attr('href', 'docs/mb12-kuyou/um_pdf/mb12_um_' + currentLang + '.pdf');
-  $('#mb12-faq-kuyou').attr('href', '#/mb12-kuyou/faqs/' + currentLang);
-  $('#mb12-support-kuyou').attr('href', '#/mb12-kuyou/supported_phones/' + currentLang);
+  $('#mb12-um-link-kuyou').attr('href', 'docs/mb12_kuyou/um_pdf/mb12_um_' + currentLang + '.pdf');
+  $('#mb12-faq-kuyou').attr('href', '#/mb12_kuyou/faqs/' + currentLang);
+  $('#mb12-support-kuyou').attr('href', '#/mb12_kuyou/supported_phones/' + currentLang);
 
   $mdview.find('img').each(function() {
     $this = $(this);
