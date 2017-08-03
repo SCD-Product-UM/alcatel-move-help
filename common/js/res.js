@@ -163,5 +163,10 @@ var RES = {
     "ids_faq": " 常见问题",
     "ids_down_user_manual": "用户手册下载",
     "ids_support_phone": "支持的手机"
+  },
+  "tr": {
+    "ids_faq": "DUK",
+    "ids_down_user_manual": "Atsisiųsti naudotojo vadovą",
+    "ids_support_phone": "Palaikomi telefonai"
   }
 }
