@@ -165,8 +165,8 @@ var RES = {
     "ids_support_phone": "支持的手机"
   },
   "tr": {
-    "ids_faq": "DUK",
-    "ids_down_user_manual": "Atsisiųsti naudotojo vadovą",
-    "ids_support_phone": "Palaikomi telefonai"
+    "ids_faq": "FAQs",
+    "ids_down_user_manual": "Download User Manual",
+    "ids_support_phone": "Supported phones"
   }
 }

@@ -238,7 +238,11 @@ function pageInit() {
   $.fn.extend({
     replaceTpl: function() {
       return this.each(function() {
-        $(this).replaceWith(tmpl($(this).attr("id"), RES[currentLang]));
+        var _res = RES["en"];
+        if(RES.hasOwnProperty(currentLang)){
+          _res= RES[currentLang]
+        }
+        $(this).replaceWith(tmpl($(this).attr("id"),_res));
       })
     }
   });
