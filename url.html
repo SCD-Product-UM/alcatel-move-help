@@ -52,11 +52,11 @@
   if (projectName == "mt30" && customeName == "generic" && pageName == "um") {
     var currentUmList = ["en","cs","de","es","es-419","fr","gr","hu","it","nl","pt","pt_BR","ro","tr"];
     var currentLangId = "en";
-    if ($.inArray(currentUmList, langId) != -1) {
+    if ($.inArray(langId,currentUmList) != -1) {
       currentLangId = langId
-    } else if ($.inArray(currentUmList, langId.split("-")[0]) != -1) {
+    } else if ($.inArray(langId.split("-")[0],currentUmList) != -1) {
       currentLangId = langId.split("-")[0]
-    } else if ($.inArray(currentUmList, langId.split("_")[0]) != -1) {
+    } else if ($.inArray(langId.split("_")[0],currentUmList) != -1) {
       currentLangId = langId.split("_")[0]
     }
     window.location.href = "http://www.tcl-move.com/help/docs/mt30/um_pdf/mt30_um_" + currentLangId + ".pdf?date=" +
