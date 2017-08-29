@@ -29,7 +29,8 @@ var langListConfig = {
   "tr": "Türkçe",
   "fi": 'Finnish',
   "et": "Estonian",
-  "zh_CN": "简体中文"
+  "zh_CN": "简体中文",
+  "zh_HK": "繁体中文"
 };
 
 var docsDir = 'docs/';
