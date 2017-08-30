@@ -1,101 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.js"></script>
-  <script src="http://cdn.bootcss.com/Director/1.2.2/director.min.js"></script>
-  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+  <title></title>
 </head>
 
 <body>
+  <div id="body"></div>
   <script type="text/javascript">
-  var pathname = window.location.hash;
-  //var pathname = 'http://www.tcl-move.com/help/url.html#/mb12/faqs/hh/en'
-  //取路由值
-  var rulparams = pathname.split('/');
-  var langId = rulparams[4];
-  var customeName = rulparams[3]
-  var pageName = rulparams[2]
-  var projectName = rulparams[1]
-    // http://www.tcl-move.com/help/#/mb12/terms_and_conditions/moveband2/en
-    //var testUrl = "http://127.0.0.1:9096"
-    //http://127.0.0.1:9096/#/mb12_kuyou/faqs/en
-
-  function getNowFormatDate() {
-    var date = new Date();
-    var seperator1 = "-";
-    var seperator2 = ":";
-    var month = date.getMonth() + 1;
-    var strDate = date.getDate();
-    if (month >= 1 && month <= 9) {
-      month = "0" + month;
-    }
-    if (strDate >= 0 && strDate <= 9) {
-      strDate = "0" + strDate;
-    }
-    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate;
-    return currentdate;
-  }
-  // mb12 alcatel 
-  if (projectName == "mb12" && customeName == "moveband2" && pageName == "terms_and_conditions") {
-    window.location.href = "http://www.tcl-move.com/help/#/mb12_terms_and_conditions/" + langId
-  }
-  if (projectName == "mb12" && customeName == "moveband2" && pageName == "faqs") {
-    window.location.href = "http://www.tcl-move.com/help/#/mb12-moveband2/faqs/" + langId
-  }
-  if (projectName == "mb12" && customeName == "moveband2" && pageName == "privacy_policy") {
-    window.location.href = "http://www.tcl-move.com/help/#/mb12_privacy_policy/" + langId
-  }
-
-  if (projectName == "mt30" && customeName == "generic" && pageName == "um") {
-    var currentUmList = ["en","cs","de","es","es-419","fr","gr","hu","it","nl","pt","pt_BR","ro","tr"];
-    var currentLangId = "en";
-    if ($.inArray(langId,currentUmList) != -1) {
-      currentLangId = langId
-    } else if ($.inArray(langId.split("-")[0],currentUmList) != -1) {
-      currentLangId = langId.split("-")[0]
-    } else if ($.inArray(langId.split("_")[0],currentUmList) != -1) {
-      currentLangId = langId.split("_")[0]
-    }
-    window.location.href = "http://www.tcl-move.com/help/docs/mt30/um_pdf/mt30_um_" + currentLangId + ".pdf?date=" +
-      getNowFormatDate()
-  }
-  if (projectName == "cpe" && customeName == "generic" && (pageName == "privacy_policy" || pageName ==
-      "terms_and_conditions")) {
-    window.location.href = "http://www.tcl-move.com/help/docs_src/cpe_" + pageName + "/" + langId + "/" + langId +
-      ".html"
-  }
-
-
-  //kuyou wifi watch
-
-  if (projectName == "wifi_watch" && customeName == "kuyou" && pageName == "terms_and_conditions") {
-    window.location.href = "http://www.tcl-move.com/help/#/wifi_watch_kuyou_tc/" + langId
-  }
-  if (projectName == "wifi_watch" && customeName == "kuyou" && pageName == "faqs") {
-    window.location.href = "http://www.tcl-move.com/help/#/wifi_watch_kuyou/faqs/" + langId
-  }
-  if (projectName == "wifi_watch" && customeName == "kuyou" && pageName == "privacy_policy") {
-    window.location.href = "http://www.tcl-move.com/help/#/wifi_watch_kuyou_pp/" + langId
-  }
-
-  //mb12 china region 
-
-  if (projectName == "mb12" && customeName == "kuyou" && pageName == "terms_and_conditions") {
-    window.location.href = "http://www.tcl-move.com/help/#/mb12_kuyou_terms_and_conditions/" + langId
-  }
-  if (projectName == "mb12" && customeName == "kuyou" && pageName == "faqs") {
-    window.location.href = "http://www.tcl-move.com/help/#/mb12_kuyou/faqs/" + langId
-  }
-  /* if (projectName == "mb12" && customeName == "kuyou" && pageName == "faqs") {
-     window.location.href = testUrl + "/#/mb12_kuyou/faqs/" + langId
-   }*/
-
-  if (projectName == "mb12" && customeName == "kuyou" && pageName == "privacy_policy") {
-    window.location.href = "http://www.tcl-move.com/help/#/mb12_kuyou_privacy_policy/" + langId
-  }
+    document.write(unescape('%3Cscript src="src/old_url.js?' + Math.random() + '"%3E%3C/script%3E'));
   </script>
 </body>
 

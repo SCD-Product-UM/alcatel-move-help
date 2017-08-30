@@ -1,0 +1,114 @@
+## URL链接
+
+### WiFi watch
+#### 通用版
+- privacy_policy
+  - http://www.alcatel-move.com/help/#/privacy_policy/en
+- terms_and_conditions
+  - http://www.alcatel-move.com/help/#/terms_and_conditions/en
+- faqs 
+  - http://www.alcatel-move.com/help/#/wifi_watch/faqs/en
+- download_user_manual
+  - http://www.alcatel-move.com/help/#/wifi_watch/download_user_manual/en
+- supported_phones
+  - http://www.alcatel-move.com/help/#/wifi_watch/supported_phones/en
+- um_pdf
+  - http://www.alcatel-move.com/help/docs/wifi_watch/um_pdf/wifi_watch_um_en.pdf
+#### kuyou
+- privacy_policy
+  - http://www.tcl-move.com/help/url.html#/wifi_watch/privacy_policy/kuyou/en
+  - http://www.alcatel-move.com/help/#/wifi_watch_kuyou_pp/en
+- terms_and_conditions
+  - http://www.tcl-move.com/help/url.html#/wifi_watch/terms_and_conditions/kuyou/en
+  - http://www.alcatel-move.com/help/#/wifi_watch_kuyou_tc/en
+- faqs
+  - http://www.tcl-move.com/help/url.html#/wifi_watch/faqs/kuyou/en
+  - http://www.alcatel-move.com/help/#/wifi_watch_kuyou/faqs/en
+- download_user_manual
+  - http://www.alcatel-move.com/help/#/wifi_watch_kuyou/download_user_manual/en
+- supported_phones
+  - http://www.alcatel-move.com/help/#/wifi_watch_kuyou/supported_phones/en
+- um_pdf
+  - http://www.alcatel-move.com/help/docs/wifi_watch_kuyou/um_pdf/wifi_watch_kuyou_um_en.pdf
+#### europe
+- privacy_policy
+  - http://www.alcatel-move.com/help/#/privacy_policy/en
+- terms_and_conditions
+  - http://www.alcatel-move.com/help/#/terms_and_conditions/en
+- faqs
+  - http://www.alcatel-move.com/help/#/europe_wifi_watch/faqs/en
+- download_user_manual
+  - http://www.alcatel-move.com/help/#/europe_wifi_watch/download_user_manual/en
+- supported_phones
+  - http://www.alcatel-move.com/help/#/europe_wifi_watch/supported_phones/en
+- um_pdf
+  - http://www.alcatel-move.com/help/docs/europe_wifi_watch/um_pdf/wifi_watch_um_en.pdf
+
+### MB12
+#### 通用版
+  - privacy_policy
+    - http://www.tcl-move.com/help/#/mb12_privacy_policy/en
+  - terms_and_conditions
+    - http://www.tcl-move.com/help/#/mb12_terms_and_conditions/en
+  - faqs
+    - http://www.tcl-move.com/help/#/mb12/faqs/en
+  - download_user_manual
+    - 无，菜单直接跳转
+  - supported_phones
+    - http://www.tcl-move.com/help/#/mb12/supported_phones/en
+  - um_pdf
+    - http://www.tcl-move.com/help/docs/mb12/um_pdf/mb12_um_en.pdf
+#### kuyou
+  - privacy_policy
+    - http://www.tcl-move.com/help/url.html#/mb12/privacy_policy/kuyou/en
+    - http://www.tcl-move.com/help/#/mb12_kuyou_privacy_policy/en
+  - terms_and_conditions
+    - http://www.tcl-move.com/help/url.html#/mb12/terms_and_conditions/kuyou/en
+    - http://www.tcl-move.com/help/#/mb12_kuyou_terms_and_conditions/en
+  - faqs
+    - http://www.tcl-move.com/help/url.html#/mb12/faqs/kuyou/en
+    - http://www.tcl-move.com/help/#/mb12_kuyou/faqs/en
+  - download_user_manual
+    - 无，菜单直接跳转
+  - supported_phones
+    - http://www.tcl-move.com/help/#/mb12_kuyou/supported_phones/en
+  - um_pdf
+    - http://www.tcl-move.com/help/docs/mb12_kuyou/um_pdf/mb12_um_zh_CH.pdf
+#### moveband2
+  - privacy_policy
+    - http://www.tcl-move.com/help/#/mb12_privacy_policy/en
+  - terms_and_conditions
+    - http://www.tcl-move.com/help/#/mb12_terms_and_conditions/en
+  - faqs
+    - http://www.tcl-move.com/help/#/mb12-moveband2/faqs/en
+  - download_user_manual
+    - 无，菜单直接跳转
+  - supported_phones
+    - http://www.tcl-move.com/help/#/mb12-moveband2/supported_phones/en
+  - um_pdf
+    - http://www.tcl-move.com/help/docs/mb12-moveband2/um_pdf/mb12_um_en_Alcatel.pdf
+
+### MT30
+#### 通用版
+  - privacy_policy
+  - terms_and_conditions
+  - faqs
+  - download_user_manual
+  - supported_phones
+  - um_pdf
+    - http://www.tcl-move.com/help/url.html#/mt30/um/generic/en
+
+### Kids watch
+#### 通用版
+  - privacy_policy
+  - terms_and_conditions
+  - faqs
+  - download_user_manual
+  - supported_phones
+  - um_pdf
+
+### CPE
+#### 通用版
+- privacy_policy
+- terms_and_conditions
+
