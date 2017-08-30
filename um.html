@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="src/css.css" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <style>
+    
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row main-row">
+      <div class="col-md-2 col-sm-3 help-nav"></div>
+      <div class="col-md-10 col-sm-9 help-main" id="doc"></div>
+    </div>
+  </div>
+  <script src="http://cdn.bootcss.com/jquery/1.12.3/jquery.js"></script>
+  <script src="https://cdn.bootcss.com/underscore.js/1.8.3/underscore-min.js"></script>
+  <script>
+    function getNowFormatDate() {
+      var date = new Date();
+      var seperator1 = "-";
+      var seperator2 = ":";
+      var month = date.getMonth() + 1;
+      var strDate = date.getDate();
+      if (month >= 1 && month <= 9) {
+        month = "0" + month;
+      }
+      if (strDate >= 0 && strDate <= 9) {
+        strDate = "0" + strDate;
+      }
+      var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate +
+        "-" + date.getHours();
+      return currentdate;
+    }
+    document.write(unescape('%3Cscript src="src/res.js?' + Math.random() + '"%3E%3C/script%3E'));
+    document.write(unescape('%3Cscript src="src/umlist.js?' + getNowFormatDate() + '"%3E%3C/script%3E'));
+    document.write(unescape('%3Cscript src="src/um.js?' + getNowFormatDate() + '"%3E%3C/script%3E'));
+  </script>
+</body>
+
+</html>

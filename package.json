@@ -1,0 +1,15 @@
+{
+  "name": "HH70",
+  "description": "",
+  "author": "jinhui.lu",
+  "private": true,
+  "scripts": {},
+  "dependencies": {},
+  "engines": {
+    "node": ">=6"
+  },
+  "devDependencies": {
+    "mkdirp": "^0.5.1",
+    "underscore": "^1.8.3"
+  }
+}
