@@ -1,3 +1,39 @@
+## 语言简写对应表
+
+- `en`: `English` 英语
+- `ar`: `العربية` 阿拉伯语
+- `bg`: `Български` 保加利亚语
+- `cs`: `čeština` 捷克语
+- `da`: `dansk` 丹麦语
+- `de`: `Deutsch` 德语
+- `el`: `Ελληνικά` 希腊语
+- `es`: `español` 西班牙语
+- `es-419`: `Español (Latino)` Latam 西班牙语
+- `fr`: `Français` 法语
+- `hr`: `Hrvatski` 克罗地亚语
+- `hu`: `magyar` 匈牙利
+- `it`: `Italiano` 意大利语
+- `mk`: `Mакедонски` 马其顿语
+- `nl`: `Nederlands` 荷兰语
+- `nn-NO`: `Norsk (bokmål)` 挪威语
+- `pt`: `Português` 葡萄牙语
+- `pt_BR`: `Português (Brasil)` 葡萄牙语(巴西)
+- `lv`: `Latvian` 拉脱维亚语
+- `lt`: `Lithuanian` 立陶宛语
+- `pl`: `Polish` 波兰语
+- `ro`: `română` 罗马尼亚
+- `ru`: `Русский` 俄语
+- `sk`: `slovenčina` 斯洛文尼亚语
+- `sl`: `slovenski` （捷克语） 斯洛伐克语
+- `sv`: `svenska` 瑞典语
+- `tr`: `Türkçe` 土耳其语
+- `fi`: `Finnish` 芬兰语
+- `et`: `Estonian` 爱沙尼亚语
+- `zh_CN`: `简体中文`
+- `zh_HK`: `繁体中文`
+
+
+
 ## URL链接
 
 ### WiFi watch
@@ -102,11 +138,7 @@
 #### 通用版
   - privacy_policy
   - terms_and_conditions
-  - faqs
-  - download_user_manual
-  - supported_phones
-  - um_pdf
-
+  
 ### CPE
 #### 通用版
 - privacy_policy
