@@ -72,6 +72,7 @@
 > 以下项目在此git仓库中维护
 ### WiFi watch
 #### 通用版
+>be call 版本
 ##### 新方案资源目录`Project\wifi_watch\generic`
 ##### URL链接
 - privacy_policy
@@ -96,6 +97,7 @@
   - 旧url：http://www.tcl-move.com/help/url.html#/wifi_watch/faqs/kuyou/en
   - 新重定向URL：http://www.tcl-move.com/help/um.html?project=wifi_watch&custom=kuyou&page=faqs&lang=en
 #### europe
+>no be call 版本
 ##### 新方案资源目录`Project\wifi_watch\europe`
 ##### URL链接
 - privacy_policy
