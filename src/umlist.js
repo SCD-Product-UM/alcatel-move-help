@@ -1000,6 +1000,9 @@ var umlist ={
         },
         "tr": {
           "tr.html": ""
+        },
+        "zh_HK": {
+          "zh_HK.html": ""
         }
       },
       "privacy_policy": {
@@ -1193,6 +1196,9 @@ var umlist ={
         },
         "zh_CN": {
           "zh_CN.html": ""
+        },
+        "zh_HK": {
+          "zh_HK.html": ""
         }
       },
       "terms_and_conditions": {
