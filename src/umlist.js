@@ -732,6 +732,7 @@ var umlist ={
         }
       },
       "um_pdf": {
+        "mt30_um_ar.pdf": "",
         "mt30_um_cs.pdf": "",
         "mt30_um_de.pdf": "",
         "mt30_um_en.pdf": "",
@@ -745,6 +746,7 @@ var umlist ={
         "mt30_um_pt.pdf": "",
         "mt30_um_pt_BR.pdf": "",
         "mt30_um_ro.pdf": "",
+        "mt30_um_ru.pdf": "",
         "mt30_um_tr.pdf": ""
       }
     }
