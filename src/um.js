@@ -9,6 +9,10 @@ var lang = GetQueryString("lang") || 'en'
 if (lang == 'zh' || lang == 'zh-rCN' || lang == 'zh-Hans_US') {
   lang = 'zh_CN';
 }
+
+if (lang == 'zh-HK' || lang == 'zh-Hant-HK') {
+  lang = 'zh_HK';
+}
 if (lang == 'cz') {
   lang = 'cs';
 }
