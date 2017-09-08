@@ -164,6 +164,11 @@ var RES = {
     "ids_down_user_manual": "用户手册下载",
     "ids_support_phone": "支持的手机"
   },
+  "zh_HK": {
+    "ids_faq": " 常見問題",
+    "ids_down_user_manual": "用戶手冊下載",
+    "ids_support_phone": "支持的手機"
+  },
   "tr": {
     "ids_faq": "FAQs",
     "ids_down_user_manual": "Download User Manual",
