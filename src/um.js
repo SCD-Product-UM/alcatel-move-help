@@ -62,6 +62,7 @@ function initSearch(page) {
 }
 
 function getRes(ids) {
+  var lang = checkLang()
   var _res
   if (RES.hasOwnProperty(lang)) {
     _res = RES[lang]
