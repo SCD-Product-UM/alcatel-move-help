@@ -495,6 +495,9 @@ var umlist ={
   "mt30": {
     "generic": {
       "faqs": {
+        "ar": {
+          "ar.html": ""
+        },
         "cs": {
           "cs.html": ""
         },
