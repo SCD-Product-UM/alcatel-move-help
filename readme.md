@@ -33,6 +33,31 @@
 - `zh_HK`: `繁体中文`
 
 
+## 文件结构
+
+```
+├── Project //按项目划分的html及um资源目录
+├── Public //公共的html及um资源目录
+├── docs_src //cpe pp和tc资源目录
+├── src
+│   ├── css.css //样式文件
+│   ├── old_index.js //用于控制旧方案的重定向
+│   ├── old_url.js //用于控制旧方案的重定向
+│   ├── um.js //最终重定向方案及逻辑处理
+│   ├── umlist.js //运行auto.sh生成的文件，用于控制重定向
+│   └── res.js //菜单多语言字符串
+├── .gitignore //git忽略文件
+├── auto.sh //批处理文件，将资源添加到对应目录之后，运行，生产src/umlist.js
+├── index.js //nodejs脚本，处理资源之后生成src/umlist.js，便于控制重定向
+├── package.json //nodejs脚本信息
+├── readme.md //项目说明文档
+├── index.html //旧方案，引用src/old_index.js，用于重定向到新方案um.html
+├── um.xml //新方案入口文件，即最终处理重定向的文件
+└── url.html ////旧方案，引用src/old_url.js，用于重定向到新方案um.html
+
+```
+
+
 
 ## 维护
 
