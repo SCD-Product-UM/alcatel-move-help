@@ -64,6 +64,13 @@
 4. 提交到git
 5. 服务器中拉取最新资源
 
+
+## 维护
+- 线上服务器：
+  - 服务器维护为`服务器组`
+  - 服务器地址：`58.251.35.66`
+  - 服务器环境代码路径:`/data/www/help/`
+
 ### 新项目或者新定制添加
 > 给出新方案的URL链接路径，并项对应信息记录到此文档中，新方案的路径型如`http://www.alcatel-move.com/help/um.html?project=wifi_watch&custom=generic&page=privacy_policy&lang=en`
 

@@ -1,4 +1,4 @@
-//兼容老方案，做重定向处理
+//兼容老方案url.html的逻辑，做重定向处理
 //var pathname = 'http://www.tcl-move.com/help/url.html#/mb12/faqs/moveband2/en'
 //取路由值
 var hashPath = window.location.hash;
