@@ -366,8 +366,7 @@ var umlist ={
         "MB12_um_pt.pdf": "",
         "MB12_um_ru.pdf": "",
         "MB12_um_sk.pdf": "",
-        "MB12_um_zh_CN.pdf": "",
-        "Thumbs.db": ""
+        "MB12_um_zh_CN.pdf": ""
       }
     },
     "kuyou": {
@@ -493,6 +492,52 @@ var umlist ={
     }
   },
   "mt30": {
+    "alcatel": {
+      "faqs": {
+        "en": {
+          "en.html": ""
+        },
+        "es-419": {
+          "es-419.html": ""
+        },
+        "pt_BR": {
+          "pt_BR.html": ""
+        }
+      },
+      "privacy_policy": {
+        "en": {
+          "en.html": ""
+        },
+        "es-419": {
+          "es-419.html": ""
+        },
+        "pt_BR": {
+          "pt_BR.html": ""
+        }
+      },
+      "supported_phones": {
+        "en": {
+          "en.html": ""
+        },
+        "es-419": {
+          "es-419.html": ""
+        },
+        "pt_BR": {
+          "pt_BR.html": ""
+        }
+      },
+      "terms_and_conditions": {
+        "en": {
+          "en.html": ""
+        },
+        "es-419": {
+          "es-419.html": ""
+        },
+        "pt_BR": {
+          "pt_BR.html": ""
+        }
+      }
+    },
     "generic": {
       "faqs": {
         "ar": {

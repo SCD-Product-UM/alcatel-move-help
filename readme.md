@@ -54,7 +54,6 @@
 ├── index.html //旧方案，引用src/old_index.js，用于重定向到新方案um.html
 ├── um.xml //新方案入口文件，即最终处理重定向的文件
 └── url.html ////旧方案，引用src/old_url.js，用于重定向到新方案um.html
-
 ```
 
 
