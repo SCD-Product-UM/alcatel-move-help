@@ -36,6 +36,7 @@
 .help-main h4 {
   font-size: 16px;
 }
+
 @media (max-width: 768px) {
   .help-nav {
     padding: 0;
@@ -45,14 +46,13 @@
     width: 100%;
     padding: 20px 10px;
     border-left: none;
-    border-top:none;
+    border-top: none;
   }
 }
+
 a:hover {
   text-decoration: none
 }
-
-
 
 h1,
 h2,
@@ -82,9 +82,9 @@ blockquote {
 }
 
 a.list-group-item.current {
-    color: #555;
-    text-decoration: none;
-    background-color: #f5f5f5;
+  color: #555;
+  text-decoration: none;
+  background-color: #f5f5f5;
 }
 
 #html-ar body {
@@ -109,11 +109,30 @@ a.list-group-item.current {
   display: none;
 }
 
-.main-row{
+.main-row {
   margin: 20px auto;
 }
-.bg-danger{
-  padding:15px;
+
+.bg-danger {
+  padding: 15px;
   margin: 5px;
-  border-radius:10px;
+  border-radius: 10px;
+}
+.page-faqs h3 {
+  color: #333;
+}
+.page-faqs h4 {
+  display: block;
+  color: #333;
+  padding:5px;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+  cursor: pointer;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.page-faqs blockquote{
+  padding-bottom: 5px;
+  margin-bottom: 8px;
 }
