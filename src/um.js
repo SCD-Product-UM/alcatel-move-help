@@ -17,6 +17,10 @@ if (lang == 'cz') {
   lang = 'cs';
 }
 
+if(lang.toLowerCase()=="es-mx"||lang.toLowerCase()=="es_mx"){
+  lang= "es-419"
+}
+
 function GetQueryString(name) {
   var locatcion_search = window.location.search
   var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
