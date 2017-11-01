@@ -22,19 +22,20 @@
   padding: 10px 20px;
   border-left: 1px solid #eee;
   border-top: 1px solid #eee;
-  color: #999;
+  color: #000;
   line-height: 2;
   min-height: 400px;
 }
 
 .help-main blockquote {
   font-size: 14px;
-  color: #999;
+  color: #000;
   line-height: 2;
 }
 
 .help-main h4 {
   font-size: 16px;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
