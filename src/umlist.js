@@ -60,6 +60,9 @@ var umlist ={
         "sk": {
           "sk.html": ""
         },
+        "tr": {
+          "tr.html": ""
+        },
         "zh_CN": {
           "zh_CN.html": ""
         }
