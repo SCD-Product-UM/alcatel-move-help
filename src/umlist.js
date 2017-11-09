@@ -411,7 +411,6 @@ var umlist ={
       }
     },
     "moveband2": {
-      "download_user_manual": {},
       "faqs": {
         "ar": {
           "ar.html": ""
@@ -804,7 +803,6 @@ var umlist ={
   },
   "wifi_watch": {
     "europe": {
-      "download_user_manual": {},
       "faqs": {
         "ar": {
           "ar.html": ""
@@ -988,7 +986,6 @@ var umlist ={
       }
     },
     "generic": {
-      "download_user_manual": {},
       "faqs": {
         "ar": {
           "ar.html": ""
