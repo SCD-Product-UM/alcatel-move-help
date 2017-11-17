@@ -17,12 +17,8 @@ if (lang == 'cz') {
   lang = 'cs';
 }
 
-if(lang.toLowerCase()=="es-mx"||lang.toLowerCase()=="es_mx"){
-  lang= "es-419";
-}
-
-if (lang.indexOf("_")!=-1) {
-  lang = lang.split("_")[0];
+if (lang.toLowerCase() == "es-mx" || lang.toLowerCase() == "es_mx") {
+  lang = "es-419";
 }
 
 function GetQueryString(name) {
@@ -63,6 +59,7 @@ function IsEndWith(str, endStr) {
   var d = str.length - endStr.length;
   return (d >= 0 && str.lastIndexOf(endStr) == d)
 }
+
 console.log(project, custom, page, lang)
 
 function initSearch(page) {
@@ -86,8 +83,8 @@ function initNavData() {
     "href": initSearch("faqs")
   }, {
     "text": getRes("ids_down_user_manual"),
-    "target":"_blank",
-    "href": "Project/" + project + "/" + custom + "/um_pdf/" + getUmName()//initSearch("download_user_manual")
+    "target": "_blank",
+    "href": "Project/" + project + "/" + custom + "/um_pdf/" + getUmName() //initSearch("download_user_manual")
   }, {
     "text": getRes("ids_support_phone"),
     "href": initSearch("supported_phones")
@@ -112,14 +109,19 @@ var menuData = {
 }
 
 function init() {
-  checkPage()
+
   var $docView = $("#doc")
-  $('html').attr('id', 'html-' + checkLang());
+  $('html').attr('id', 'html-' + currentLang);
   initMenu()
+
   if (page != "um_pdf") {
-    $docView.load(checkPage() + checkLang() + "/" + checkLang() + ".html #pageContainer >*", function (response, status, xhr) {
+    var currentPage = checkPage(); //获取处理之后能重定向的页面路径
+    var currentLang = checkLang(); //获取处理之后能重定向的语言简写
+    var htmlPath = currentPage + currentLang + "/" + currentLang + ".html"
+    console.log(htmlPath)
+    $docView.load(htmlPath + " #pageContainer >*", function (response, status, xhr) {
       if (status == "error") {
-        $docView.html("<p class='alert alert-danger'>404 error:<br/>" + checkPage() + checkLang() + "/" + checkLang() + ".html</div>")
+        $docView.html("<p class='alert alert-danger'>404 error:<br/>" + htmlPath + "</div>")
       } else {
         initFaqPage()
         initDownloadUserManual()
@@ -127,10 +129,11 @@ function init() {
 
     })
   } else {
-    console.log(getUmName())
-    if (getUmName() != "") {
-      console.log("Project/" + project + '/' + custom + '/' + page + '/'+getUmName())
-      window.location.href = "Project/" + project + '/' + custom + '/' + page + '/' + getUmName()
+    var umName = getUmName()
+    var umPath = "Project/" + project + '/' + custom + '/' + page + '/' + umName
+    if (umName != "") {
+      console.log(umPath)
+      window.location.href = umPath
     } else {
       $docView.html("<p class='alert alert-danger'>404 error:<br/></div>")
     }
@@ -164,6 +167,8 @@ function checkPage() {
 }
 
 
+
+
 function getUmName() {
   var um_pdf_name = ""
 
@@ -187,28 +192,65 @@ function getUmName() {
   return um_pdf_name
 }
 
-function checkLang() {
-  var currentLang
 
-  function findLang(listObj, lang) {
-    var _lang = null
-    _.each(listObj, function (v, k) {
-      if (k.toLowerCase().replace(/\-/g, "_") == lang.toLowerCase().replace(/\-/g, "_")) {
-        _lang = k
-        return false
-      }
-    })
-    return _lang
+function getPageData(project, custom, page) {
+  var objData;
+  var pageList;
+  var _umList = umlist[project][custom];
+  var redirectStr = ""
+  var redirectArr
+  _.each(_umList[page], function (v, k) {
+    if (IsEndWith(k, ".redirect")) {
+      redirectStr = k;
+      return false;
+    }
+  })
+
+  if (redirectStr != "") {
+    redirectArr = redirectStr.split(".")
+    var redirectArrLength = redirectArr.length
+    if (redirectArr[0] == "Public") {
+      objData = publicList
+    } else {
+      objData = umlist
+    }
+    if (redirectArrLength == 3) {
+      pageList = objData
+    } else if (redirectArrLength == 4) {
+      pageList = objData[redirectArr[1]]
+    } else if (redirectArrLength == 5) {
+      pageList = objData[redirectArr[1]][redirectArr[2]]
+    } else if (redirectArrLength == 6) {
+      pageList = objData[redirectArr[1]][redirectArr[2]][redirectArr[3]]
+    }
+  } else {
+    pageList = umlist[project][custom]
   }
+  var currentLang = "en"
   try {
-    if (_.has(umlist[project][custom], page)) {
-      currentLang = findLang(umlist[project][custom][page], lang) || findLang(umlist[project][custom][page], lang.split("-")[0]) || findLang(umlist[project][custom][page], lang.split("_")[0]) || "en"
+    if (_.has(pageList, page)) {
+      currentLang = findLang(pageList[page], lang) || findLang(pageList[page], lang.split("-")[0]) || findLang(pageList[page], lang.split("_")[0]) || "en"
     }
   } catch (err) {
     currentLang = "en"
   }
-
   return currentLang
+}
+
+
+function findLang(listObj, lang) {
+  var _lang = null
+  _.each(listObj, function (v, k) {
+    if (k.toLowerCase().replace(/\-/g, "_") == lang.toLowerCase().replace(/\-/g, "_")) {
+      _lang = k
+      return false
+    }
+  })
+  return _lang
+}
+
+function checkLang() {
+  return getPageData(project, custom, page)
 }
 
 function initMenu() {
@@ -223,16 +265,16 @@ function initMenu() {
   if (isHasMeun) {
     var str = "<div id='help-nav list-group'>"
     $.each(menuData[project][custom][page], function (i, li) {
-      if(li.hasOwnProperty("target")){
-        str += "<a target='"+li.target+"' class='list-group-item' href='" + li.href + "'>" + li.text + "</a>"
-      }else{
+      if (li.hasOwnProperty("target")) {
+        str += "<a target='" + li.target + "' class='list-group-item' href='" + li.href + "'>" + li.text + "</a>"
+      } else {
         str += "<a class='list-group-item' href='" + li.href + "'>" + li.text + "</a>"
       }
     })
     str += "</div>"
     $(".help-nav").html(str).show()
     $(".help-main").removeClass("col-md-12").addClass("col-md-10 col-sm-9")
-  }else{
+  } else {
     $(".help-nav").html(str).hide()
     $(".help-main").removeClass("col-md-10 col-sm-9").addClass("col-md-12")
   }

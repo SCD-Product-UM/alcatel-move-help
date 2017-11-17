@@ -1427,3 +1427,195 @@ var umlist ={
     }
   }
 }
+ var publicList={
+  "privacy_policy": {
+    "ar": {
+      "ar.html": ""
+    },
+    "bg": {
+      "bg.html": ""
+    },
+    "cs": {
+      "cs.html": ""
+    },
+    "da": {
+      "da.html": ""
+    },
+    "de": {
+      "de.html": ""
+    },
+    "el": {
+      "el.html": ""
+    },
+    "en": {
+      "en.html": ""
+    },
+    "es": {
+      "es.html": ""
+    },
+    "es-419": {
+      "es-419.html": ""
+    },
+    "et": {
+      "et.html": ""
+    },
+    "fi": {
+      "fi.html": ""
+    },
+    "fr": {
+      "fr.html": ""
+    },
+    "hr": {
+      "hr.html": ""
+    },
+    "hu": {
+      "hu.html": ""
+    },
+    "it": {
+      "it.html": ""
+    },
+    "lt": {
+      "lt.html": ""
+    },
+    "lv": {
+      "lv.html": ""
+    },
+    "mk": {
+      "mk.html": ""
+    },
+    "nl": {
+      "nl.html": ""
+    },
+    "nn-NO": {
+      "nn-NO.html": ""
+    },
+    "pl": {
+      "pl.html": ""
+    },
+    "pt": {
+      "pt.html": ""
+    },
+    "pt_BR": {
+      "pt_BR.html": ""
+    },
+    "ro": {
+      "ro.html": ""
+    },
+    "ru": {
+      "ru.html": ""
+    },
+    "sk": {
+      "sk.html": ""
+    },
+    "sl": {
+      "sl.html": ""
+    },
+    "sv": {
+      "sv.html": ""
+    },
+    "tr": {
+      "tr.html": ""
+    },
+    "uk": {
+      "uk.html": ""
+    },
+    "zh_CN": {
+      "zh_CN.html": ""
+    }
+  },
+  "terms_and_conditions": {
+    "ar": {
+      "ar.html": ""
+    },
+    "bg": {
+      "bg.html": ""
+    },
+    "cs": {
+      "cs.html": ""
+    },
+    "da": {
+      "da.html": ""
+    },
+    "de": {
+      "de.html": ""
+    },
+    "el": {
+      "el.html": ""
+    },
+    "en": {
+      "en.html": ""
+    },
+    "es": {
+      "es.html": ""
+    },
+    "es-419": {
+      "es-419.html": ""
+    },
+    "et": {
+      "et.html": ""
+    },
+    "fi": {
+      "fi.html": ""
+    },
+    "fr": {
+      "fr.html": ""
+    },
+    "hr": {
+      "hr.html": ""
+    },
+    "hu": {
+      "hu.html": ""
+    },
+    "it": {
+      "it.html": ""
+    },
+    "lt": {
+      "lt.html": ""
+    },
+    "lv": {
+      "lv.html": ""
+    },
+    "mk": {
+      "mk.html": ""
+    },
+    "nl": {
+      "nl.html": ""
+    },
+    "nn-NO": {
+      "nn-NO.html": ""
+    },
+    "pl": {
+      "pl.html": ""
+    },
+    "pt": {
+      "pt.html": ""
+    },
+    "pt_BR": {
+      "pt_BR.html": ""
+    },
+    "ro": {
+      "ro.html": ""
+    },
+    "ru": {
+      "ru.html": ""
+    },
+    "sk": {
+      "sk.html": ""
+    },
+    "sl": {
+      "sl.html": ""
+    },
+    "sv": {
+      "sv.html": ""
+    },
+    "tr": {
+      "tr.html": ""
+    },
+    "uk": {
+      "uk.html": ""
+    },
+    "zh_CN": {
+      "zh_CN.html": ""
+    }
+  }
+}

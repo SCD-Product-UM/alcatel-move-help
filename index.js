@@ -12,6 +12,7 @@ function geFileList(path) {
   return filesList;
 }
 var fileLists={}
+var fileListsPublic={}
 //遍历读取文件
 function readFile(path, filesList) {
   files = fs.readdirSync(path); //需要用到同步读取
@@ -49,6 +50,7 @@ function readFileList(path,preListData){
 readFileList("Project",fileLists)
 console.log(fileLists)
 
+readFileList("Public",fileListsPublic)
 
 
 function add2fileLists(file){
@@ -61,7 +63,7 @@ function add2fileLists(file){
 
 //写入文件utf-8格式
 function writeFile(fileName, data) {
-  fs.writeFile(fileName,"var umlist ="+JSON.stringify(data, null, 2) , 'utf-8', complete);
+  fs.writeFile(fileName,"var umlist ="+JSON.stringify(data, null, 2)+"\n var publicList="+JSON.stringify(fileListsPublic, null, 2), 'utf-8', complete);
 
   function complete() {
     console.log("文件生成成功");
