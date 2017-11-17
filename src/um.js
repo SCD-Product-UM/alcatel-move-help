@@ -18,7 +18,11 @@ if (lang == 'cz') {
 }
 
 if(lang.toLowerCase()=="es-mx"||lang.toLowerCase()=="es_mx"){
-  lang= "es-419"
+  lang= "es-419";
+}
+
+if (lang.indexOf("_")!=-1) {
+  lang = lang.split("_")[0];
 }
 
 function GetQueryString(name) {
